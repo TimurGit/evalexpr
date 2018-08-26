@@ -1,0 +1,41 @@
+{
+    "name": "timurgit/evalexpr",
+    "description": ":description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TimurGit",
+            "email": "mustafintim@gmail.com",
+            "homepage": "https://github.com/timurgit"
+        }
+    ],
+    "homepage": "https://github.com/timurgit/evalexpr",
+    "keywords": ["Laravel", "EvalExpr"],
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "orchestra/testbench": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TimurGit\\EvalExpr\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TimurGit\\EvalExpr\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TimurGit\\EvalExpr\\EvalExprServiceProvider"
+            ],
+            "aliases": {
+                "EvalExpr": "TimurGit\\EvalExpr\\Facades\\EvalExpr"
+            }
+        }
+    }
+}
