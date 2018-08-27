@@ -3,7 +3,7 @@
 namespace TimurGit\EvalExpr;
 
 use Illuminate\Support\ServiceProvider;
-use TimurGit\EvalExpr\Commands\EvalExpression;
+use TimurGit\EvalExpr\Commands\EvalExpressionCommand;
 
 class EvalExprServiceProvider extends ServiceProvider
 {
@@ -43,7 +43,7 @@ class EvalExprServiceProvider extends ServiceProvider
             ], 'evalexpr.views');*/
 
             // Registering package commands.
-             $this->commands([EvalExpression::class]);
+             $this->commands([EvalExpressionCommand::class]);
         }
     }
 
@@ -55,20 +55,8 @@ class EvalExprServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/evalexpr.php', 'evalexpr');
-
-        // Register the service the package provides.
-        $this->app->singleton('evalexpr', function ($app) {
-            return new EvalExpr;
-        });
+        $this->app->bind('TimurGit\EvalExpr\Evaluating', 'TimurGit\EvalExpr\EvalExpression');
+        $this->app->bind('TimurGit\EvalExpr\Validator', 'TimurGit\EvalExpr\ValidatorExpression');
     }
 
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['evalexpr'];
-    }
 }
