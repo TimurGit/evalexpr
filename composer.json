@@ -12,9 +12,7 @@
     "homepage": "https://github.com/timurgit/evalexpr",
     "keywords": ["Laravel", "EvalExpr"],
     "require": {
-        "illuminate/support": "~5"
-    },
-    "require-dev": {
+        "illuminate/support": "~5",
         "phpunit/phpunit": "~6.0",
         "orchestra/testbench": "~3.0"
     },
