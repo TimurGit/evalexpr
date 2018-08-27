@@ -1,0 +1,47 @@
+before_script:
+# Install dependencies
+- bash ci/docker_install.sh > /dev/null
+
+# We test PHP5.3
+test:5.3:
+  image: php:5.3
+  script:
+  - phpunit --configuration phpunit.xml
+
+# We test PHP5.4
+test:5.4:
+  image: php:5.4
+  script:
+  - phpunit --configuration phpunit.xml
+
+# We test PHP5.5
+test:5.5:
+  image: php:5.5
+  script:
+  - phpunit --configuration phpunit.xml
+
+# We test PHP5.6
+test:5.6:
+  image: php:5.6
+  script:
+  - phpunit --configuration phpunit.xml
+
+# We test PHP7.0 (good luck with that)
+test:7.0:
+  image: php:7.0
+  script:
+  - phpunit --configuration phpunit.xml
+
+
+# We test PHP7.1 (good luck with that)
+test:7.1:
+  image: php:7.1
+  script:
+  - phpunit --configuration phpunit.xml
+
+
+# We test PHP7.2 (good luck with that)
+test:7.2:
+  image: php:7.2
+  script:
+  - phpunit --configuration phpunit.xml
