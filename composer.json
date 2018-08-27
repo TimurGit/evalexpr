@@ -11,6 +11,7 @@
     ],
     "homepage": "https://github.com/timurgit/evalexpr",
     "keywords": ["Laravel", "EvalExpr"],
+    "minimum-stability": "dev",
     "require": {
         "illuminate/support": "~5",
         "phpunit/phpunit": "~6.0",
